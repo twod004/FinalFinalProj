@@ -31,7 +31,7 @@ print_r($_SESSION);
     <a href="contactUs.html">Contact Us</a>
   </div>
   <div id="content">
-    <form action = "placeorder.php" id = "form2">
+    <form action = "placeorder.php" id = "form2" method = "post">
 		<div id="checkout-info">
 			<div class="col" id="customer-details">
 				<h2>Customer Details</h2>
@@ -64,23 +64,29 @@ print_r($_SESSION);
 				<div class="customer-details-row" id="payment-method">
 					<label>Payment Method</label><br>
 					<div class="inline-input">
+
 						<label>
-							<input type="radio" name="visa" id="visa">
+							<input type="radio" name="pay" id="pay1" value = "visa" onclick = "paymentmethod('pay1')">
 							<img src="images/visa.png">
 						</label>
 					</div>
 					<div class="inline-input">
 						<label>
-							<input type="radio" name="visa" id="visa">
+							<input type="radio" name="pay" id="pay2" value = "master" onclick = "paymentmethod('pay2')">
 							<img src="images/mastercard.png">
 						</label>
 					</div>
 					<div class="inline-input">
 						<label>
-							<input type="radio" name="visa" id="visa">
+							<input type="radio" name="pay" id="pay3" value = "paypal" onclick = "paymentmethod('pay3')">
 							<img src="images/paypal.png">
 						</label>
 					</div>
+          <div class = "inline-input">
+            <label>
+              <input type = "hidden" name = "payment" id = "payment" value = "0">
+            </label>
+          </div>
 				</div>
 				<div style="clear:both"></div>
 				<h2>Advance Delivery</h2>

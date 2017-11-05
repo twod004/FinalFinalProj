@@ -1,3 +1,17 @@
+<?php
+session_start();
+$fname = $POST_['customer-first-name'];
+$lname = $POST_['customer-last-name'];
+$address = $POST_['customer-address'];
+$contact = $POST_['customer-contact'];
+$email = $POST_['customer-email'];
+$date = $POST_['delivery-date'];
+$time = $POST_['delivery-time'];
+$payment = $POST_['payment'];
+print_r($POST);
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,41 +43,40 @@
 						<th class="left">Qty Item</th>
 						<th class="right">Total</th>
 					</tr>
-					<tr>
-						<td class="left">McSpicy</td>
-						<td class="right">9.90</td>
-					</tr>
-					<tr>
-						<td class="left">Big Mac</td>
-						<td class="right">3.90</td>
-					</tr>
-					<tr class="blank-row">
-					</tr>
+          <?php
+          for ($i = 0; $i < sizeOf($_SESSION['post-data']['orderitem']); $i++){
+           echo "<tr><td class = 'left'>".$_SESSION['post-data']['orderitem'][$i]." x ".$_SESSION['post-data']['orderqty'][$i]."</td><td class= 'right'>$".$_SESSION['post-data']['orderprice'][$i]."</td></tr>";
+
+         }
+          ?>
 					<tr>
 						<th class="left">SubTotal</th>
-						<td class="right">13.80</td>
+						<td class="right"><?php
+            echo $_SESSION['post-data']['order-subtotal']?></td>
 					</tr>
 					<tr>
 						<th class="left">Tax</th>
-						<td class="right">1.80</td>
+						<td class="right">$1.80</td>
 					</tr>
 					<tr>
 						<th class="left">Delivery Charge</th>
-						<td class="right">1.00</td>
+						<td class="right">$1.00</td>
 					</tr>
 					<tr class="blank-row">
 					</tr>
 					<tr id="net-total">
 						<th class="left">Net Total</td>
-						<th class="right">10.40</th>
+						<th class="right">$<?php
+            echo $_SESSION['post-data']['order-total']?></th>
 					</tr>
 					<tr>
 					 <th class="left">Payment Method</th>
-					 <th id="payment-method"><img src="images/visa.png"></th>
+					 <th id="payment-method"><?php
+           echo $payment?></th>
 					</tr>
 					<tr>
 					 <th class="left">Estimated Delivery Time</th>
-					 <th id="delivery-time">3:20 PM</th>
+					 <th id="delivery-time"><?php echo $time?></th>
 					</tr>
 
 				</table>
