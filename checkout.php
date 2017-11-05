@@ -66,19 +66,19 @@ print_r($_SESSION);
 					<div class="inline-input">
 
 						<label>
-							<input type="radio" name="pay" id="pay1" value = "visa" onclick = "paymentmethod('pay1')">
+							<input type="radio" name="pay" id="pay1" value = "VISA" onclick = "paymentmethod('pay1')">
 							<img src="images/visa.png">
 						</label>
 					</div>
 					<div class="inline-input">
 						<label>
-							<input type="radio" name="pay" id="pay2" value = "master" onclick = "paymentmethod('pay2')">
+							<input type="radio" name="pay" id="pay2" value = "Mastercard" onclick = "paymentmethod('pay2')">
 							<img src="images/mastercard.png">
 						</label>
 					</div>
 					<div class="inline-input">
 						<label>
-							<input type="radio" name="pay" id="pay3" value = "paypal" onclick = "paymentmethod('pay3')">
+							<input type="radio" name="pay" id="pay3" value = "Paypal" onclick = "paymentmethod('pay3')">
 							<img src="images/paypal.png">
 						</label>
 					</div>

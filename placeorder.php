@@ -1,14 +1,14 @@
 <?php
 session_start();
-$fname = $POST_['customer-first-name'];
-$lname = $POST_['customer-last-name'];
-$address = $POST_['customer-address'];
-$contact = $POST_['customer-contact'];
-$email = $POST_['customer-email'];
-$date = $POST_['delivery-date'];
-$time = $POST_['delivery-time'];
-$payment = $POST_['payment'];
-print_r($POST);
+$fname = $_POST['customer-first-name'];
+$lname = $_POST['customer-last-name'];
+$address = $_POST['customer-address'];
+$contact = $_POST['customer-contact'];
+$email = $_POST['customer-email'];
+$date = $_POST['delivery-date'];
+$time = $_POST['delivery-time'];
+$payment = $_POST['payment'];
+print_r($_POST);
 ?>
 
 
