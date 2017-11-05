@@ -31,7 +31,7 @@ print_r($_SESSION);
     <a href="contactUs.html">Contact Us</a>
   </div>
   <div id="content">
-    <form action = "placeorder.php">
+    <form action = "placeorder.php" id = "form2">
 		<div id="checkout-info">
 			<div class="col" id="customer-details">
 				<h2>Customer Details</h2>
@@ -134,7 +134,7 @@ print_r($_SESSION);
 					</tr>
 				</table>
 				<div id="place-order">
-					<button type = "submit" form = >
+					<button type = "submit" form = "form2" >
 						Place Order
 					</a>
 				</div>
