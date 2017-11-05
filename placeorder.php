@@ -1,4 +1,7 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 'On');
+
 session_start();
 $fname = $_POST['customer-first-name'];
 $lname = $_POST['customer-last-name'];
@@ -9,6 +12,23 @@ $date = $_POST['delivery-date'];
 $time = $_POST['delivery-time'];
 $payment = $_POST['payment'];
 print_r($_POST);
+$servername = "localhost";
+$username = "f35im";
+$password = "f35im";
+$dbname = "f35im";
+
+
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+//check connection
+if (!$conn) {
+
+  die ("Connection failed:".mysqli_connect_error());
+}
+
+for ($i = 0; $i < sizeOf($_SESSION['post-data']['orderitem']); $i++) {
+
+  $sql = "INSERT INTO orders (customerid, menuid, quantity) "
+}
 ?>
 
 
