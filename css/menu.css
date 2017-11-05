@@ -1,0 +1,230 @@
+body{
+	background-color:#FDFAF6;
+}
+#wrapper {
+  margin: auto;
+  width:1170px;
+  font-family: Sans-Serif;
+}
+
+#logo {
+  width: 50%;
+  margin: 0 auto 10px;
+  border: 10px solid #C41231;
+}
+
+#logo img {
+  max-height: 120px;
+  margin: auto;
+  display: block;
+  padding: 10px 0;
+}
+
+#nav {
+  background-color: #C41231;
+  text-align: center;
+  width: 90%;
+  margin: auto;
+  padding: 5px 0;
+}
+
+#nav a {
+  text-decoration: none;
+  font-size: 20px;
+  font-weight:bold;
+  color:white;
+  font-family:Arial;
+  padding: 3px 20px;
+  background-color: #C41231;
+}
+#nav a:hover{
+	color:black;
+	border-bottom:2.5px solid #231F20;
+}
+
+#content {
+  min-height: 514px;
+  margin: 10px auto;
+  padding-top: 10px;
+  width: 90%;
+}
+.col{
+	float:left;
+}
+#categories{
+
+	width:20%;
+	padding:0;
+	margin-right:5px;
+
+}
+#categories ul{
+	list-style-type:none;
+	padding:0;
+	text-align:center;
+	margin:0;
+}
+#categories li{
+	width:100%;
+	background-color:white;
+	font-size:18px;
+	outline:none;
+	margin-bottom:15px;
+	border:none;
+	border: 1px solid #D7D7D7;
+}
+#categories a:hover{
+	background-color:black;
+	color:white;
+}
+#categories a:focus{
+	color:white;
+	background-color:black;
+}
+#categories a{
+	width:100%;
+	color:black;
+	text-decoration:none;
+	display:block;
+	padding:5px 0;
+}
+#menu-list{
+	width:500px;
+}
+#menu-list .menu-row{
+	margin-bottom:20px;
+
+}
+#menu-list .menu-item{
+	width:293px;
+	height:293px;
+	background-color:white;
+	/*display:inline-block;*/
+	margin:0 4px;
+	border: 1px solid #D7D7D7;
+	overflow:hidden;
+}
+#menu-list img{
+	padding:15px 27px 0;
+}
+#menu-list p{
+	text-align:center;
+	margin:0;
+	font-size:18px;
+	padding-bottom:15px;
+	border-bottom: 1px solid #D7D7D7;
+}
+#menu-list .order-count{
+	height:56px;
+	text-align:center;
+}
+#menu-list .order-count button{
+	text-decoration:none;
+	font-size:24px;
+	color:white;
+	background-color:black;
+	padding:5px 10px;
+	margin:9px 0;
+	border:none;
+	outline:none;
+	width:34px;
+}
+
+#menu-list .order-count input{
+	margin: 17px 30px;
+	text-align:center;
+}
+#cart{
+	float:right;
+	width:25%;
+	padding-top:0;
+	margin-left:5px;
+	text-align:center;
+
+	border: 1px solid #D7D7D7;
+}
+#cart h2{
+	background-color:black;
+	color:white;
+	margin:0;
+	padding:10px;
+}
+#cart table{
+	width:100%;
+	background-color:#FBFBFB;
+	color:black;
+	padding:0 5px;
+	border-collapse:collapse;
+}
+#cart table .right{
+	text-align:right;
+	width:10%;
+}
+#cart table .left{
+	text-align:left;
+}
+#cart table th{
+	padding:5px 10px;
+	font-size:18px;
+	font-weight:normal;
+}
+#cart table td{
+	font-size:16px;
+	padding:5px 15px;
+	height:20px;
+}
+.blank-row{
+	height:20px;
+}
+.cancel-button{
+	height:50%;
+	float:right;
+	margin-top:5px;
+}
+#submit-order{
+	background-color:#C41231;
+	margin:0 15px;
+}
+#submit-order a{
+	outline:none;
+	background-color:#C41231;
+	color:white;
+	border:none;
+	display:block;
+	text-transform:uppercase;
+	width:100%;
+	margin:10px auto;
+	font-size:24px;
+	font-weight:bold;
+	text-decoration:none;
+
+}
+#submit-order a:active{
+	transform:scale(1.1,1.1);
+}
+#footer {
+  background-color: #231F20;
+  text-align: center;
+  padding: 5px 0;
+  color:white;
+}
+
+#alacarte-menu {
+display: none;
+
+}
+
+#sides-menu {
+
+	display: none;
+}
+
+#drinks-menu {
+
+	display: none;
+}
+
+#promotion-menu {
+
+
+}

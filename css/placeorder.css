@@ -1,0 +1,150 @@
+body{
+	background-color:#FDFAF6;
+}
+#wrapper {
+  margin: auto;
+  width:1170px;
+  font-family: Sans-Serif;
+}
+
+#logo {
+  width: 50%;
+  margin: 0 auto 10px;
+  border: 10px solid #C41231;
+}
+
+#logo img {
+  max-height: 120px;
+  margin: auto;
+  display: block;
+  padding: 10px 0;
+}
+
+#nav {
+  background-color: #C41231;
+  text-align: center;
+  width: 90%;
+  margin: auto;
+  padding: 5px 0;
+}
+
+#nav a {
+  text-decoration: none;
+  font-size: 20px;
+  font-weight:bold;
+  color:white;
+  font-family:Arial;
+  padding: 3px 20px;
+  background-color: #C41231;
+}
+#nav a:hover{
+	color:black;
+	border-bottom:2.5px solid #231F20;
+}
+
+#content {
+  min-height: 514px;
+  margin: 10px auto;
+  padding-top: 10px;
+  width: 70%;
+}
+h2{
+	background-color:black;
+	color:white;
+	text-align:center;
+	padding:10px;
+	margin:0;
+}
+
+#order-details{
+	width:100%;
+	text-align:center;
+	border: 1px solid #D7D7D7;
+	background-color:#FBFBFB;
+	padding-bottom:5px;
+}
+#order-details p{
+	padding:10px;
+	border-bottom:1px solid #D7D7D7;
+	margin:0;
+}
+#order-details h2{
+	background-color:#FBFBFB;
+	color:black;
+	margin:0;
+	padding: 0 10px 10px;
+	margin-bottom:10px;
+	text-align:left;
+}
+
+#order-details table{
+	width:100%;
+	background-color:#FBFBFB;
+	color:black;
+	padding:0 5px;
+	border-collapse:collapse;
+}
+#order-details table .right{
+	text-align:right;
+	width:10%;
+}
+#order-details table .left{
+	text-align:left;
+}
+#order-details table th{
+	padding:5px 10px;
+	font-size:18px;
+	font-weight:normal;
+}
+#order-details table td{
+	font-size:16px;
+	padding:5px 15px;
+	height:20px;
+}
+.blank-row{
+	height:20px;
+}
+#delivery-time{
+	float:right;
+	width:68px;
+}
+#payment-method{
+	width:64px;
+}
+#last-row{
+	height:50px;
+	font-size:24px;
+	border:1px solid #D7D7D7;
+	border-top:none;
+	width:100%;
+}
+#print{
+	float:left;
+	margin-left:10px;
+}
+#print button{
+	font-size:24px;
+	background-color:black;
+	color:white;
+	border:none;
+	outline:none;
+	padding:0px 10px;
+	margin:9px 0px;
+}
+#return{
+	float:right;
+	margin:9px 0px;
+	margin-right:10px;
+}
+#return a{
+	text-decoration:none;
+	color:white;
+	background-color:black;
+	padding:0px 10px;
+}
+#footer {
+  background-color: #231F20;
+  text-align: center;
+  padding: 5px 0;
+  color:white;
+}
