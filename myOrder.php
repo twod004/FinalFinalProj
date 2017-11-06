@@ -24,7 +24,7 @@
   <div id="content">
 	<div id="my-order-email">
 		<p> Order Status </p>
-		<form action="" id="my-order-email-form">
+		<form action="showOrder.php" id="my-order-email-form" method = "post">
 			<input type="email" placeholder="Enter your email address." name="email" id="email">
 			<input type="image" id="submit" src="images/submit-arrow.png">
 		</form>
