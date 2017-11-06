@@ -54,6 +54,7 @@ mysqli_close($conn);
   <meta charset="utf-8">
   <script type="text/javascript" src="js/placeorder.js"></script>
   <link rel="stylesheet" href="css/placeorder.css">
+  <link rel="stylesheet" href="css/parent.css">
 </head>
 
 <body>
