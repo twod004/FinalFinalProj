@@ -22,34 +22,67 @@ else return false;
 function additem(itemqty, itemname, itemprice){
   var x = document.getElementById(itemname).value;
   var y = document.getElementById(itemqty).value;
+  
+  if(y == '0'){
+	  return;
+  }
+  
   var z = document.getElementById(itemprice).value;
   var q = parseFloat(y);
   var w = parseFloat(z);
   var e = (q*w).toFixed(2);
+  
+  var r = parseFloat(document.getElementById("order-subtotal").value);
+  var sub = (parseFloat(e) + parseFloat(r)).toFixed(2);
+  var total = (parseFloat(sub) + 1.80 + 1).toFixed(2);
+  
+  var itemExists = document.getElementById(x+"-order");
+  if(itemExists != null){
+	  var tempqty = document.getElementById(x+"-order-qty").innerHTML;
+	  var newY = parseFloat(tempqty) + parseFloat(y);
+	  document.getElementById(x+"-order-qty").innerHTML = newY;
+	  var tempprice = document.getElementById(x+'-order-price').innerHTML;
+	  var newPrice = (parseFloat(tempprice) + parseFloat(e)).toFixed(2);
+	  document.getElementById(x+'-order-price').innerHTML = newPrice;
+	  
+	  var hiddenOrderItems = document.getElementsByName("orderitem[]");
+	  for(var i=0; i<hiddenOrderItems.length; i++){
+		  if(hiddenOrderItems[i].value == x){
+			  document.getElementsByName('orderqty[]')[i].value = newY;
+			  document.getElementsByName('orderprice[]')[i].value = newPrice;
+		  }
+	  }
+  }else{
   var rows = document.getElementById("order-cart").rows.length;
-  var table = document.getElementById("order-cart")
+  var table = document.getElementById("order-cart");
   var row  = table.insertRow(rows-6);
+  row.className+="new-row";
   var cell1 = row.insertCell(0);
   var cell2 = row.insertCell(1);
   var cell3 = row.insertCell(2);
   var cell4 = row.insertCell(3);
   var cell5 = row.insertCell(4);
-  var cell6 = row.insertCell(5);
-  var r = parseFloat(document.getElementById("order-subtotal").value);
-  var sub = (parseFloat(e) + parseFloat(r)).toFixed(2);
-  var total = (parseFloat(sub) + 1.80 + 1).toFixed(2);
-  cell1.innerHTML= x+" x"+y;
+  
+  cell1.className+= "left";
+  cell1.className+=" new-item";
+  cell1.innerHTML= "<div id='"+x+"-order'><strong id='"+x+"-order-qty'>"+y+"</strong> "+x+" </div><img class='delete-btn' src='images/bin.png' onclick='deleterow(this)'>";
+  
   cell2.innerHTML= e;
-  cell3.innerHTML = "<input type = 'button' value = 'x'onclick = 'deleterow(this)'>";
-  cell4.innerHTML = "<input type = 'hidden' name = 'orderitem[]' value = '"+x+"'>";
-  cell5.innerHTML = "<input type = 'hidden' name = 'orderqty[]' value ='"+y+"'>";
-  cell6.innerHTML = "<input type = 'hidden' name = 'orderprice[]' value ='"+e+"'>";
+  cell2.id = x+'-order-price';
+  cell2.className += "right";
+  
+  cell3.innerHTML = "<input type = 'hidden' name = 'orderitem[]' value = '"+x+"'>";
+  cell4.innerHTML = "<input type = 'hidden' name = 'orderqty[]' value ='"+y+"'>";
+  cell5.innerHTML = "<input type = 'hidden' name = 'orderprice[]' value ='"+e+"'>";
+  
+  cell3.style.display = "none";
+  cell4.style.display = "none";
+  cell5.style.display = "none";
+  }
   document.getElementById("order-subtotal").value = sub;
   document.getElementById("order-total").value = total;
   document.getElementById(itemqty).value = 0;
 }
-
-
 
 function deleterow(x){
   var y = x.parentNode.parentNode.rowIndex;

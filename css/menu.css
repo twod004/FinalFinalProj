@@ -25,6 +25,7 @@
 	margin-bottom:15px;
 	border:none;
 	border: 1px solid #D7D7D7;
+	border-radius:5px;
 }
 #categories a:hover{
 	background-color:black;
@@ -40,25 +41,34 @@
 	text-decoration:none;
 	display:block;
 	padding:5px 0;
+	transition: color 0.6s;
+	transition: background-color 0.6s;
 }
 #menu-list{
-	width:500px;
-}
-#menu-list .menu-row{
-	margin-bottom:20px;
-
-}
-#menu-list .menu-item{
-	width:293px;
-	height:293px;
-	background-color:white;
-	/*display:inline-block;*/
-	margin:0 4px;
-	border: 1px solid #D7D7D7;
-	overflow:hidden;
+	width:54%;
 }
 #menu-list img{
-	padding:15px 27px 0;
+	padding-top:5px;
+	height:160px;
+}
+#menu-list .menu-row{
+	width:90%;
+	margin: 0 auto 20px;
+}
+#menu-list .menu-item{
+	width:45%;
+	height:330px;
+	background-color:white;
+	display:inline-block;
+	margin:0 2%;
+	border: 1px solid #D7D7D7;
+	overflow:hidden;
+	border-radius:5px;
+}
+#menu-list img{
+	display:block;
+	width:80%;
+	margin:0 auto;
 }
 #menu-list p{
 	text-align:center;
@@ -66,26 +76,46 @@
 	font-size:18px;
 	padding-bottom:15px;
 	border-bottom: 1px solid #D7D7D7;
+	cursor:default;
 }
 #menu-list .order-count{
 	height:56px;
 	text-align:center;
 }
-#menu-list .order-count button{
-	text-decoration:none;
-	font-size:24px;
+#menu-list .order-count button, .submit-btn{
+	color:black;
+	background-color:white;
+	cursor:pointer;
+	border: 1px solid #d7d7d7;
+	border-radius:5px;
+	transition: background-color 0.6s;
+	transition: color 0.5s;
+}
+#menu-list .order-count button:hover, .submit-btn:hover{
 	color:white;
 	background-color:black;
+}
+#menu-list .order-count .minus-btn,#menu-list .order-count .plus-btn{
 	padding:5px 10px;
 	margin:9px 0;
-	border:none;
-	outline:none;
 	width:34px;
+	font-size:24px;
+}
+#menu-list .submit-btn{
+	font-size:18px;
+	margin:0 auto;
+	text-transform:uppercase;
+	padding: 6px 22px;
 }
 
 #menu-list .order-count input{
-	margin: 17px 30px;
+	margin: 10px 30px;
 	text-align:center;
+    padding: 9px 0;
+    border-radius: 5px;
+    border: 1px solid #d6d6d6;
+	cursor:default;
+	outline:none;
 }
 #cart{
 	float:right;
@@ -93,8 +123,18 @@
 	padding-top:0;
 	margin-left:5px;
 	text-align:center;
-
 	border: 1px solid #D7D7D7;
+	margin-bottom:20px;
+	border-radius:5px;
+}
+#cart input{
+	border:none;
+	background:none;
+	font-size:16px;
+	text-align:right;
+}
+#cart td,#cart input{
+	cursor:default;
 }
 #cart h2{
 	background-color:black;
@@ -104,7 +144,7 @@
 }
 #cart table{
 	width:100%;
-	background-color:#FBFBFB;
+	background-color:white;
 	color:black;
 	padding:0 5px;
 	border-collapse:collapse;
@@ -115,6 +155,24 @@
 }
 #cart table .left{
 	text-align:left;
+}
+#cart table .new-item{
+	position:relative;
+	padding-top:15px;
+	padding-bottom:15px;
+}
+.delete-btn{
+	position:absolute;
+	right:0;
+	top:32%;
+    height:16px;
+    font-weight: bold;
+	opacity:0.4;
+	transition: opacity 0.6s;
+	cursor:pointer;
+}
+.delete-btn:hover{
+	opacity:1;
 }
 #cart table th{
 	padding:5px 10px;
@@ -129,33 +187,22 @@
 .blank-row{
 	height:20px;
 }
-.cancel-button{
-	height:50%;
-	float:right;
-	margin-top:5px;
+#sub-total{
+	border-top:1px solid #d6d6d6;
+}
+#net-total{
+	border-bottom:1px solid #d6d6d6;
 }
 #submit-order{
-	background-color:#C41231;
-	margin:0 15px;
+	padding:20px 5px 15px;
+	background-color:white;
 }
-#submit-order a{
-	outline:none;
-	background-color:#C41231;
-	color:white;
-	border:none;
-	display:block;
+#submit-order .submit-btn{
+	font-size:18px;
+	margin:0 auto;
 	text-transform:uppercase;
-	width:100%;
-	margin:10px auto;
-	font-size:24px;
-	font-weight:bold;
-	text-decoration:none;
-
+	padding: 10px 40px;
 }
-#submit-order a:active{
-	transform:scale(1.1,1.1);
-}
-
 #alacarte-menu {
 display: none;
 
