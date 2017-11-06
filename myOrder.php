@@ -25,7 +25,7 @@
 	<div id="my-order-email">
 		<p> Order Status </p>
 		<form action="" id="my-order-email-form">
-			<input type="email" placeholder="Enter your email address." name="email" id="email">
+			<input type="email" placeholder="Enter your email address" name="email" id="email">
 			<input type="image" id="submit" src="images/submit-arrow.png">
 		</form>
 	</div>

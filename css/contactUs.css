@@ -7,8 +7,25 @@
   height:440px;
   padding: 15px 0;
 }
-
+#contact-us h1{
+	font-size:44px;
+}
 #contact-us-details{	
 	width:90%;
 	margin: 0 auto;
+	line-height:30px;
+}
+.delivery-image{
+	position:relative;
+	margin-top:5%;
+	margin-left:15%;
+	width:80%;
+}
+.delivery-image .delivery-truck{
+	width:50%;
+}
+.delivery-image .time{
+	position:absolute;
+	height:100px;
+	left:13%;
 }
