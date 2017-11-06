@@ -5,33 +5,132 @@
 #slideShow {
   padding: 15px 0;
   height: 440px;
+  position:relative;
 }
 
 #aboutUs {
-  text-align: center; 
+  text-align: center;
+  width:80%; 
 }
-
+#aboutUs h1{
+	font-size:44px;
+}
+#aboutUs p{
+	font-size:16px;
+}
+#profile-pic-div{
+	display:table;
+	width:50%;
+	margin:10px auto;
+}
+#profile-pic-div img{
+	width:100px;
+	border-radius:50%;
+}
+#profile-pic-div p{
+	margin-top:0;
+	font-size:14px;
+}
+#profile-pic-div .col{
+	display:table-cell;
+}
+.promotion{
+	background-size:100% 100%;
+	position:relative;
+	background-blend-mode:screen;
+}
 .imgSlideShow {
   display: none;
   height:440px;
   width:90%;
   margin:auto;
 }
-
+#intro-deal{
+	background-image: linear-gradient(to right, black 0%, white 100%), url(../images/deal2.png);
+}
+#bundle-deal{
+	background-image: url(../images/deal1.png);
+	background-size:55% 100%;
+	background-repeat:no-repeat;
+}
+.promotion h1,.promotion a{
+	position: absolute;
+    text-align: center;
+	z-index:2;
+	right:0;
+}
+.promotion h1{
+	top: 50%;
+	font-size:40px;
+    width: 45%;
+	color:black;
+	transform: translateY(-50%);
+	text-transform:uppercase;
+}
+#bundle-deal h1{
+	top:45%;
+}
+.promotion a{
+	text-decoration:none;
+	background: #363940;
+	color:white;
+    border: none;
+    margin: 0;
+    outline: none;
+    padding: 10px 30px;
+    top: 68%;
+    right: 13%;
+    font-size: 22px;
+    border-radius: 3px;
+	cursor:pointer;
+	transition: opacity 0.6s;
+}
+.promotion a:hover{
+	opacity:0.6;
+}
 #slide-buttons {
   text-align: center;
   padding-bottom:15px;
 }
 #slide-buttons button{
-  padding:10px;
+  padding:5px;
   margin-left:15px;
   border-radius:30px;
   border:1px solid #231F20;
-  
+  cursor:pointer;
+  transition: background-color 0.6s;
 }
 #slide-buttons button:active{
   background-color:#231F20;
 }
 #slide-buttons button:focus{
   outline: 0;
+}
+#slide-buttons button:hover{
+  background-color:black !important;
+}
+#right, #left{
+  border: solid black;
+  border-width: 0 6px 6px 0;
+  display: inline-block;
+  padding: 6px;
+}
+#right {
+    transform: rotate(-45deg);
+}
+
+#left {
+    transform: rotate(135deg);
+}
+.prev-slide,.next-slide{
+	position:absolute;
+	height:100%;
+	top:50%;
+	cursor:pointer;
+}
+.next-slide{
+	right:2%;
+}
+.prev-slide{
+	left:2%;
 }

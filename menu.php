@@ -13,12 +13,14 @@
 
 <div id="wrapper">
   <div id="logo">
-    <a href="home.html"><img src="images/logo.png"></a>
+    <a href="home.html"><img src="images/logo2.png"></a>
   </div>
   <div id="nav">
-    <a href="menu.php">Menu</a>
-    <a href="myOrder.php">My Order</a>
-    <a href="contactUs.html">Contact Us</a>
+	<div class="nav-bar">
+		<a href="menu.php">Menu</a>
+		<a href="myOrder.php">My Order</a>
+		<a href="contactUs.html">Contact Us</a>
+	</div>
   </div>
   <div id="content">
 	<div id="categories" class="col">
@@ -225,7 +227,12 @@
 
 </div>
 <div id="footer">
-    <small><i>Copyright &copy 2017 Food Fighters</i></small>
+	<div class="social">
+		<span><a href="#"><img src="images/facebook.png"></a></span>
+		<span><a href="#"><img src="images/twitter.png"></a></span>
+		<span><a href="#"><img src="images/instagram.png"></a></span>
+	</div>
+	<small><i>Copyright &copy 2017 Food Fighters</i></small>
 </div>
 
 </body>

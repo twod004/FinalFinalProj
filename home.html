@@ -1,67 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <title>Food Fighters</title>
-  <meta charset="utf-8">
-  <script type="text/javascript" src="js/home.js"></script>
-  <link rel="stylesheet" href="css/home.css">
-  <link rel="stylesheet" href="css/parent.css">
-</head>
+	<head>
+	  <title>Food Fighters</title>
+	  <meta charset="utf-8">
+	  <script type="text/javascript" src="js/home.js"></script>
+	  <link rel="stylesheet" href="css/home.css">
+	  <link rel="stylesheet" href="css/parent.css">
+	</head>
 
 <body>
-<div id="wrapper">
-  <div id="logo">
-    <a href="home.html"><img src="images/logo.png"></a>
-  </div>
-  <div id="nav">
-    <a href="menu.php">Menu</a>
-    <a href="myOrder.php">My Order</a>
-    <a href="contactUs.html">Contact Us</a>
-  </div>
-  <div id="content">
-    <div id="slideShow">
-      <div id="aboutUs" class="imgSlideShow">
-		<h1>About Us</h1>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-		Pellentesque a dapibus lectus, sed rutrum massa. Morbi sit 
-		amet quam interdum, luctus justo eu, iaculis erat. Etiam pellentesque
-		maximus justo, non iaculis urna consectetur ut. Aliquam interdum dui tellus,
-		ac cursus diam dapibus eget. Mauris porttitor efficitur massa eget vehicula.
-		Nunc et faucibus dui. Mauris in lacus non eros euismod consequat. Nam pellen
-		tesque malesuada quam in pharetra.</p>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-		Pellentesque a dapibus lectus, sed rutrum massa. Morbi sit 
-		amet quam interdum, luctus justo eu, iaculis erat. Etiam pellentesque
-		maximus justo, non iaculis urna consectetur ut. Aliquam interdum dui tellus,
-		ac cursus diam dapibus eget. Mauris porttitor efficitur massa eget vehicula.
-		Nunc et faucibus dui. Mauris in lacus non eros euismod consequat. Nam pellen
-		tesque malesuada quam in pharetra.</p>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-		Pellentesque a dapibus lectus, sed rutrum massa. Morbi sit 
-		amet quam interdum, luctus justo eu, iaculis erat. Etiam pellentesque
-		maximus justo, non iaculis urna consectetur ut. Aliquam interdum dui tellus,
-		ac cursus diam dapibus eget. Mauris porttitor efficitur massa eget vehicula.
-		Nunc et faucibus dui. Mauris in lacus non eros euismod consequat. Nam pellen
-		tesque malesuada quam in pharetra.</p>
-      </div>
-      <img class="imgSlideShow" src="images/deal1.png">
-      <img class="imgSlideShow" src="images/deal2.png">
+	<div id="wrapper">
+	  <div id="logo">
+		<a href="home.html"><img src="images/logo2.png"></a>
+	  </div>
+	  <div id="nav">
+		<div class="nav-bar">
+			<a href="menu.php">Menu</a>
+			<a href="myOrder.php">My Order</a>
+			<a href="contactUs.html">Contact Us</a>
+		</div>
+	  </div>
+	  <div id="content">
+		<div id="slideShow">
+			<div hidden id = "slide-state">0</div>
+			<div class="prev-slide load">
+				<i id="left"></i>
+			</div>
+			<div class="next-slide">
+				<i id="right"></i>
+			</div>
+			<div class="imgSlideShow promotion" id="intro-deal">
+				<h1>Turkish Cuisine <br>@ your doorstep</h1>
+				<a href="menu.php">Order Now &rarr;</a>
+			</div>
+			<div class="imgSlideShow promotion" id="bundle-deal">
+				<h1>Chicken Bundle Kebab<br> <em>@ only $50.00</em> </h1>
+				<a href="menu.php">Order Now &rarr;</a>
+			</div>
+		  
+			<div id="aboutUs" class="imgSlideShow">
+			<h1>About Us</h1>
+			<div id="profile-pic-div">
+				<div class="col">
+					<img src="images/profile-pic.png">
+					<p>Robin</p>
+				</div>
+				<div class="col">
+					<img src="images/profile-pic1.png">
+					<p>Raafiq</p>
+				</div>
+			</div>
+			<p>
+				It all began one day when the co-founder, Robin had returned from a trip to Ankara, the capital of Turkey.
+				He had enjoyed the delicacies there and wanted to bring his friends to experience it again in Singapore.
+			</p>
+			<p>However, there were only a few restaurants scattered across the country and they were in hard to reach locations.</p>
+			<p>This was why he started Food Fighters - to deliver delicious turkish dishes to the customer's doorstep anytime in the day.</p>
+			<p>And through this, we hope more people would come to love turkish food just as much as we do!</p>
+			</div>
 
-    </div>
-    <div id="slide-buttons">
-	  <button class="slide-button" onclick="showSlide(0)"></button>
-      <button class="slide-button" onclick="showSlide(1)"></button>
-      <button class="slide-button" onclick="showSlide(2)"></button>
-    </div>
-  </div>
-  
-</div>
-<div id="footer">
-    <small><i>Copyright &copy 2017 Food Fighters</i></small>
-</div>
-
+		</div>
+		<div id="slide-buttons">
+		  <button class="slide-button"></button>
+		  <button class="slide-button"></button>
+		  <button class="slide-button"></button>
+		</div>
+	  </div>
+		<div id="footer">
+			<div class="social">
+				<span><a href="#"><img src="images/facebook.png"></a></span>
+				<span><a href="#"><img src="images/twitter.png"></a></span>
+				<span><a href="#"><img src="images/instagram.png"></a></span>
+			</div>
+			<small><i>Copyright &copy 2017 Food Fighters</i></small>
+		</div>
+	</div>
 </body>
-</html>
-
 </html>
