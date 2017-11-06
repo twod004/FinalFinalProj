@@ -15,7 +15,7 @@
 <body>
 <div id="wrapper">
   <div id="logo">
-    <a href="home.html"><img src="images/logo.png"></a>
+    <a href="home.html"><img src="images/logo2.png"></a>
   </div>
   <div id="nav">
     <a href="menu.php">Menu</a>
@@ -72,10 +72,7 @@
   						<th class="left"><p>Qty item</p></th>
   						<th class="right"><p>TOTAL</p></th>
   					</tr>
-  					<tr class="item-detail-row">
-  						<td class="left">1 Big Mac</td>
-  						<td class="right">4.95</td>
-  					</tr>
+
   					<tr class="item-detail-row">
               <?php
                           $email = $_POST['email'];
@@ -106,7 +103,7 @@
                           $row1 = mysqli_fetch_array($result1);
                           $count = $row1['count'];
 
-                          for ($i = 1; $i <= $count; $i++ ){
+                          for ($i = 0; $i < $count; $i++ ){
 
                             $sql2 = "SELECT menuid from orders where customerid = '".$id."';";
                             $sql3 = "SELECT quantity from orders where customerid = '".$id."';";
@@ -117,13 +114,15 @@
                             if (mysqli_num_rows($result2)>0) {
 
                               while ($row = mysqli_fetch_assoc($result2)){
-                                $menuid = $row['menuid'][$i];
+                                $rows[] = $row;
+                                $menuid = $rows[$i]['menuid'];
 
                               }
                             }
                             if (mysqli_num_rows($result3)>0){
                               while ($row = mysqli_fetch_assoc($result3)){
-                                $menuqty = $row['quantity'][$i];
+                                $rows1[] = $row;
+                                $menuqty = $rows1[$i]['quantity'];
                               }
                             }
 
@@ -146,7 +145,7 @@
 
                             $totalprice = $menuprice * $menuqty;
 
-                            echo " <tr><td>".$menuname." x ".$menuqty."</td><td>".$totalprice."</td></tr>";
+                            echo " <tr><td class = 'left'>".$menuname." x ".$menuqty."</td><td class = 'right'>$".$totalprice."</td></tr>";
 
 
                           }
