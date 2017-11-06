@@ -6,6 +6,7 @@
   <meta charset="utf-8">
   <script type="text/javascript" src="js/menu.js"></script>
   <link rel="stylesheet" href="css/menu.css">
+  <link rel="stylesheet" href="css/parent.css">
 </head>
 
 <body>
@@ -213,9 +214,9 @@
 			<!-- <a href="checkout.html">
 				CheckOut
 			</a> -->
-      <button type = "submit" form = "form1">
-        Checkout
-      </button>
+		  <button type = "submit" form = "form1">
+			Checkout
+		  </button>
 		</div>
   </form>
 	</div>

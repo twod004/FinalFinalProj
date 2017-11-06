@@ -6,6 +6,7 @@
   <meta charset="utf-8">
   <script type="text/javascript" src="js/myOrder.js"></script>
   <link rel="stylesheet" href="css/myOrder.css">
+  <link rel="stylesheet" href="css/parent.css">
 </head>
 
 <body>

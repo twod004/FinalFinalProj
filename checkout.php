@@ -18,6 +18,7 @@ print_r($_SESSION);
   <meta charset="utf-8">
   <script type="text/javascript" src="js/checkout.js"></script>
   <link rel="stylesheet" href="css/checkout.css">
+  <link rel="stylesheet" href="css/parent.css">
 </head>
 
 <body>
@@ -82,11 +83,11 @@ print_r($_SESSION);
 							<img src="images/paypal.png">
 						</label>
 					</div>
-          <div class = "inline-input">
-            <label>
-              <input type = "hidden" name = "payment" id = "payment" value = "0">
-            </label>
-          </div>
+				  <div class = "inline-input">
+					<label>
+					  <input type = "hidden" name = "payment" id = "payment" value = "0">
+					</label>
+				  </div>
 				</div>
 				<div style="clear:both"></div>
 				<h2>Advance Delivery</h2>
@@ -109,10 +110,9 @@ print_r($_SESSION);
 
 
             <?php
-            for ($i = 0; $i < sizeOf($_SESSION['post-data']['orderitem']); $i++){
-             echo "<tr><td>".$_SESSION['post-data']['orderitem'][$i]." x ".$_SESSION['post-data']['orderqty'][$i]."</td><td>$".$_SESSION['post-data']['orderprice'][$i]."</td></tr>";
-
-           }
+				for ($i = 0; $i < sizeOf($_SESSION['post-data']['orderitem']); $i++){
+				 echo "<tr><td>".$_SESSION['post-data']['orderitem'][$i]." x ".$_SESSION['post-data']['orderqty'][$i]."</td><td>$".$_SESSION['post-data']['orderprice'][$i]."</td></tr>";
+				}
             ?>
 
 
@@ -120,8 +120,10 @@ print_r($_SESSION);
 					</tr>
 					<tr>
 						<th class="left">SubTotal</th>
-						<td class="right"><?php
-            echo $_SESSION['post-data']['order-subtotal']?></td>
+						<td class="right">
+						<?php
+							echo $_SESSION['post-data']['order-subtotal']?>
+						</td>
 					</tr>
 					<tr>
 						<th class="left">Tax</th>
@@ -135,14 +137,16 @@ print_r($_SESSION);
 					</tr>
 					<tr id="net-total">
 						<th class="left">Net Total</td>
-						<th class="right"><?php
-            echo $_SESSION['post-data']['order-total']?></th>
+						<th class="right">
+							<?php
+							echo $_SESSION['post-data']['order-total']?>
+						</th>
 					</tr>
 				</table>
 				<div id="place-order">
 					<button type = "submit" form = "form2" >
 						Place Order
-					</a>
+					</button>
 				</div>
 			</div>
 			<div style="clear:both"></div>

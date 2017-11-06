@@ -27,7 +27,7 @@ if (!$conn) {
 
 for ($i = 0; $i < sizeOf($_SESSION['post-data']['orderitem']); $i++) {
 
-  $sql = "INSERT INTO orders (customerid, menuid, quantity) "
+  $sql = "INSERT INTO orders (customerid, menuid, quantity) ";
 }
 ?>
 
@@ -40,6 +40,7 @@ for ($i = 0; $i < sizeOf($_SESSION['post-data']['orderitem']); $i++) {
   <meta charset="utf-8">
   <script type="text/javascript" src="js/placeorder.js"></script>
   <link rel="stylesheet" href="css/placeorder.css">
+  <link rel="stylesheet" href="css/parent.css">
 </head>
 
 <body>
