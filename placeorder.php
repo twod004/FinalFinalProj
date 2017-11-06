@@ -1,6 +1,6 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 'On');
+// error_reporting(E_ALL);
+// ini_set('display_errors', 'On');
 
 session_start();
 $fname = $_POST['customer-first-name'];
@@ -11,7 +11,9 @@ $email = $_POST['customer-email'];
 $date = $_POST['delivery-date'];
 $time = $_POST['delivery-time'];
 $payment = $_POST['payment'];
-print_r($_POST);
+$total =  $_SESSION['post-data']['order-total'];
+$subtotal = $_SESSION['post-data']['order-subtotal'];
+// print_r($_POST);
 $servername = "localhost";
 $username = "f35im";
 $password = "f35im";
@@ -19,12 +21,12 @@ $dbname = "f35im";
 
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
-//check connection
+//check connection.
 if (!$conn) {
 
   die ("Connection failed:".mysqli_connect_error());
 }
-$sql = "INSERT INTO customers (firstname, lastname, address,cemail, orderdate, ordertime) values ('".$fname."','".$lname."','".$address."','".$email."','".$date."','".$time."');";
+$sql = "INSERT INTO customers (firstname, lastname, address,cemail, orderdate, ordertime, subtotal, total) values ('".$fname."','".$lname."','".$address."','".$email."','".$date."','".$time."','".$subtotal."','".$total."');";
 if (mysqli_query($conn, $sql)) {
   echo "Record updated successfully";
 } else {
@@ -72,7 +74,14 @@ mysqli_close($conn);
   <div id="content">
 	<h2>Billing Content</h2>
 	<div class="col" id="order-details">
-				<p>Thank you for ordering with us.<br> A confirmation email has been sent to your email address.<br>
+				<p>Thank you for ordering with us.<br> A confirmation email has been sent to the following email address:
+          <?php
+          $subject = 'FOOD FIGHTERS ORDER';
+          $message = 'YOUR DELIVERY IS ON ITS WAY! Just click on the following link to check your orders: http://192.168.56.2/f35im/FinalFinalProj/myOrder.php';
+          Mail($email, $subject, $message);
+
+          for ($i = 0; $i < sizeOf($_SESSION['post-data']['orderitem']); $i++){
+         echo "<tr><td class = 'left'>".$_SESSION['post-data']['orderitem'][$i]." x ".$_SESSION['post-data']['orderqty'][$i]."</td><td class= 'right'>$".$_SESSION['post-data']['orderprice'][$i]."</td></tr>";} ?><br>
 				You may track your order via the My Order page.</p>
 				<h2>Order Details</h2>
 				<table border="0">

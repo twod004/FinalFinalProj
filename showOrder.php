@@ -145,7 +145,7 @@
 
                             $totalprice = $menuprice * $menuqty;
 
-                            echo " <tr><td class = 'left'>".$menuname." x ".$menuqty."</td><td class = 'right'>$".$totalprice."</td></tr>";
+                            echo " <tr><td class = 'left'>".$menuname." x ".$menuqty."</td><td class = 'right'>$".round($totalprice,2)."</td></tr>";
 
 
                           }
@@ -161,15 +161,37 @@
   					</tr>
   					<tr>
   						<th class="left">Subtotal</td>
-  						<td class="right">7.90</td>
+  						<td class="right">$<?php
+                          $email = $_POST['email'];
+													$servername = "localhost";
+													$username = "f35im";
+													$password = "f35im";
+													$dbname = "f35im";
+
+													// Create connection
+													$conn = mysqli_connect($servername, $username, $password, $dbname);
+													// Check connection
+													if (!$conn) {
+														die("Connection failed: " . mysqli_connect_error());
+													}
+                          $sql = "SELECT subtotal from customers where cemail = '".$email."';";
+                          $result = mysqli_query($conn, $sql);
+                          if (mysqli_num_rows($result) > 0) {
+														// output data of each row
+														while($row = mysqli_fetch_assoc($result)) {
+															echo  $row["subtotal"];
+														}
+													} else {
+														echo "0 results";
+													} ?></td>
   					</tr>
   					<tr>
   						<th class="left">Tax</td>
-  						<td class="right">1.50</td>
+  						<td class="right">$1.80</td>
   					</tr>
   					<tr>
   						<th class="left">Delivery Charge</td>
-  						<td class="right">1.00</td>
+  						<td class="right">$1.00</td>
   					</tr>
   					<tr class="blank-row">
   						<td></td>
@@ -177,7 +199,29 @@
   					</tr>
   					<tr id="net-total">
   						<th class="left">Net Total</td>
-  						<td class="right">10.40</td>
+  						<td class="right">$<?php
+                          $email = $_POST['email'];
+													$servername = "localhost";
+													$username = "f35im";
+													$password = "f35im";
+													$dbname = "f35im";
+
+													// Create connection
+													$conn = mysqli_connect($servername, $username, $password, $dbname);
+													// Check connection
+													if (!$conn) {
+														die("Connection failed: " . mysqli_connect_error());
+													}
+                          $sql = "SELECT total from customers where cemail = '".$email."';";
+                          $result = mysqli_query($conn, $sql);
+                          if (mysqli_num_rows($result) > 0) {
+														// output data of each row
+														while($row = mysqli_fetch_assoc($result)) {
+															echo  $row["total"];
+														}
+													} else {
+														echo "0 results";
+													} ?></td>
   					</tr>
   				</table>
   		</div>
