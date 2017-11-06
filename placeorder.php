@@ -24,12 +24,26 @@ if (!$conn) {
 
   die ("Connection failed:".mysqli_connect_error());
 }
-
+$sql = "INSERT INTO customers (firstname, lastname, address,cemail, orderdate, ordertime) values ('".$fname."','".$lname."','".$address."','".$email."','".$date."','".$time."');";
+if (mysqli_query($conn, $sql)) {
+  echo "Record updated successfully";
+} else {
+  echo "Error updating record: " . mysqli_error($conn);
+}
 for ($i = 0; $i < sizeOf($_SESSION['post-data']['orderitem']); $i++) {
 
-  $sql = "INSERT INTO orders (customerid, menuid, quantity) ";
-}
-?>
+  $sql = "INSERT INTO orders (customerid, menuid, quantity) VALUES ( (SELECT customerid FROM customers WHERE cemail = '".$email."'),(SELECT menuid FROM menu WHERE name = '".$_SESSION['post-data']['orderitem'][$i]."'), ".$_SESSION['post-data']['orderqty'][$i].");";
+
+  if (mysqli_query($conn, $sql)) {
+    echo "Record Updated Successfully";
+
+  } else {
+    echo "Error updating record: " . mysqli_error($conn);
+  }
+  }
+
+mysqli_close($conn);
+  ?>
 
 
 <!DOCTYPE html>
@@ -40,7 +54,6 @@ for ($i = 0; $i < sizeOf($_SESSION['post-data']['orderitem']); $i++) {
   <meta charset="utf-8">
   <script type="text/javascript" src="js/placeorder.js"></script>
   <link rel="stylesheet" href="css/placeorder.css">
-  <link rel="stylesheet" href="css/parent.css">
 </head>
 
 <body>
@@ -49,8 +62,8 @@ for ($i = 0; $i < sizeOf($_SESSION['post-data']['orderitem']); $i++) {
     <a href="home.html"><img src="images/logo.png"></a>
   </div>
   <div id="nav">
-    <a href="menu.php">Menu</a>
-    <a href="myOrder.php">My Order</a>
+    <a href="menu.html">Menu</a>
+    <a href="myOrder.html">My Order</a>
     <a href="contactUs.html">Contact Us</a>
   </div>
   <div id="content">
