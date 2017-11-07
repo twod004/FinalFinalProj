@@ -1,4 +1,17 @@
 
+window.onload = function(){
+	document.getElementById("form1").onsubmit = checkForEmptyCart;
+}
+function checkForEmptyCart(){
+	var y = document.getElementById("order-subtotal").value;
+	if(y == '0.00'){
+		alert("Cart is empty. Please add an item to cart before checking out.");
+		return false;
+	}else{
+		return true;
+	}
+	
+}
 
 function itemplus(itemqty){
 
@@ -26,7 +39,7 @@ function additem(itemqty, itemname, itemprice){
   if(y == '0'){
 	  return;
   }
-  
+ 
   var z = document.getElementById(itemprice).value;
   var q = parseFloat(y);
   var w = parseFloat(z);

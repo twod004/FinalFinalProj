@@ -5,7 +5,6 @@
 	float:left;
 }
 #categories{
-
 	width:20%;
 	padding:0;
 	margin-right:5px;
@@ -46,18 +45,20 @@
 }
 #menu-list{
 	width:54%;
+	height:330px;
 }
 #menu-list img{
 	padding-top:5px;
-	height:160px;
+	height:48%;
 }
 #menu-list .menu-row{
 	width:90%;
 	margin: 0 auto 20px;
+	height:100%;
 }
 #menu-list .menu-item{
 	width:45%;
-	height:330px;
+	height:100%;
 	background-color:white;
 	display:inline-block;
 	margin:0 2%;
@@ -175,9 +176,12 @@
 	opacity:1;
 }
 #cart table th{
-	padding:5px 10px;
-	font-size:18px;
+	padding:5px 15px;
+	font-size:20px;
 	font-weight:normal;
+}
+#cart table th input{
+	font-size:20px;
 }
 #cart table td{
 	font-size:16px;
@@ -204,17 +208,14 @@
 	padding: 10px 40px;
 }
 #alacarte-menu {
-display: none;
-
+	display: none;
 }
 
 #sides-menu {
-
 	display: none;
 }
 
 #drinks-menu {
-
 	display: none;
 }
 

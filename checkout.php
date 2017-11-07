@@ -1,4 +1,3 @@
-
 <?php
 
 
@@ -41,11 +40,11 @@ print_r($_SESSION);
 				<div class="customer-details-row">
 					<div class="inline-input">
 						<label for="customer-first-name">First Name</label><br>
-						<input type="text" name="customer-first-name" id="customer-first-name" required>
+						<input type="text" name="customer-first-name" id="customer-first-name" pattern="[A-Za-z]+" title="Only characters are allowed" required>
 					</div>
 					<div class="inline-input">
 						<label for="customer-last-name">Last Name</label><br>
-						<input type="text" name="customer-last-name" id="customer-last-name" required>
+						<input type="text" name="customer-last-name" id="customer-last-name" pattern="[A-Za-z]+" title="Only characters are allowed" required>
 					</div>
 					<div style="clear:both"></div>
 				</div>
@@ -56,20 +55,19 @@ print_r($_SESSION);
 				<div class="customer-details-row">
 					<div  class="inline-input">
 						<label for="customer-contact">Contact</label><br>
-						<input type="text" name="customer-contact" id="customer-contact" required>
+						<input type="text" name="customer-contact" id="customer-contact" pattern="^[96]\d{7}" title="Invalid contact number" required>
 					</div>
 					<div class="inline-input">
 						<label for="customer-email">Email</label><br>
-						<input type="email" name="customer-email" id="customer-email" required>
+						<input type="email" name="customer-email" id="customer-email" pattern="\w+([\.-]?\w+)*@(\w+\.){1,3}(\w{2,3})" title="Invalid email address"required>
 					</div>
 					<div style="clear:both"></div>
 				</div>
 				<div class="customer-details-row" id="payment-method">
 					<label>Payment Method</label><br>
 					<div class="inline-input">
-
 						<label>
-							<input type="radio" name="pay" id="pay1" value = "VISA" onclick = "paymentmethod('pay1')">
+							<input type="radio" name="pay" id="pay1" value = "VISA" onclick = "paymentmethod('pay1')" checked>
 							<img src="images/visa.png">
 						</label>
 					</div>
@@ -94,51 +92,50 @@ print_r($_SESSION);
 				<div style="clear:both"></div>
 				<h2>Advance Delivery</h2>
 				<div class="customer-details-row">
-					<label for="delivery-date">Date</label><br>
-					<input type="date" name="delivery-date" id="delivery-date">
-				</div>
-				<div class="customer-details-row">
-					<label for="delivery-time">Time</label><br>
-					<input type="time" name="delivery-time" id="delivery-time">
+					<div class="inline-input">
+						<label for="delivery-date">Date</label><br>
+						<input type="date" name="delivery-date" id="delivery-date">
+					</div>
+					<div class="inline-input">
+						<label for="delivery-time">Time</label><br>
+						<input type="time" name="delivery-time" id="delivery-time">
+					</div>
 				</div>
 			</div>
-			<div class="col" id="order-details">
+			
+			<div id="order-details">
 				<h2>Order Details</h2>
 				<table border="0">
 					<tr>
-						<th class="left">Qty Item</th>
-						<th class="right">Total</th>
+						<th class="left">Item</th>
+						<th class="right">Price($)</th>
 					</tr>
-
-
             <?php
 				for ($i = 0; $i < sizeOf($_SESSION['post-data']['orderitem']); $i++){
-				 echo "<tr><td>".$_SESSION['post-data']['orderitem'][$i]." x ".$_SESSION['post-data']['orderqty'][$i]."</td><td>$".$_SESSION['post-data']['orderprice'][$i]."</td></tr>";
+				 echo "<tr><td class='left'><strong>".$_SESSION['post-data']['orderqty'][$i]."</strong>  ".$_SESSION['post-data']['orderitem'][$i]."</td><td class='right'>".$_SESSION['post-data']['orderprice'][$i]."</td></tr>";
 				}
             ?>
-
-
 					<tr class="blank-row">
 					</tr>
-					<tr>
+					<tr id="sub-total">
 						<th class="left">SubTotal</th>
-						<td class="right">
+						<th class="right">
 						<?php
 							echo $_SESSION['post-data']['order-subtotal']?>
-						</td>
+						</th>
 					</tr>
 					<tr>
-						<th class="left">Tax</th>
+						<td class="left">Tax</td>
 						<td class="right">1.80</td>
 					</tr>
 					<tr>
-						<th class="left">Delivery Charge</th>
+						<td class="left">Delivery Charge</td>
 						<td class="right">1.00</td>
 					</tr>
 					<tr class="blank-row">
 					</tr>
 					<tr id="net-total">
-						<th class="left">Net Total</td>
+						<th class="left">Net Total</th>
 						<th class="right">
 							<?php
 							echo $_SESSION['post-data']['order-total']?>
@@ -146,9 +143,9 @@ print_r($_SESSION);
 					</tr>
 				</table>
 				<div id="place-order">
-					<button type = "submit" form = "form2" >
-						Place Order
-					</button>
+				  <button type = "submit" class="submit-btn" form = "form2">
+					Checkout
+				  </button>
 				</div>
 			</div>
 			<div style="clear:both"></div>

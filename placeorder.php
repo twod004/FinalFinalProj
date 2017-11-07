@@ -19,6 +19,10 @@ $username = "f35im";
 $password = "f35im";
 $dbname = "f35im";
 
+if(empty($time)){
+	date_default_timezone_set("Asia/Singapore");
+	$time = date("h:ia", strtotime("+30 minutes"));
+}
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 //check connection.
@@ -72,9 +76,10 @@ mysqli_close($conn);
 	</div>
   </div>
   <div id="content">
-	<h2>Billing Content</h2>
+	
 	<div class="col" id="order-details">
-				<p>Thank you for ordering with us.<br> A confirmation email has been sent to the following email address:
+		<h2>Billing Details</h2>
+		<p>Thank you for ordering with us.<br> A confirmation email has been sent to the following email address:
           <?php
           $subject = 'FOOD FIGHTERS ORDER';
           $message = 'YOUR DELIVERY IS ON ITS WAY! Just click on the following link to check your orders: http://192.168.56.2/f35im/FinalFinalProj/myOrder.php';
@@ -83,29 +88,25 @@ mysqli_close($conn);
           for ($i = 0; $i < sizeOf($_SESSION['post-data']['orderitem']); $i++){
          echo "<tr><td class = 'left'>".$_SESSION['post-data']['orderitem'][$i]." x ".$_SESSION['post-data']['orderqty'][$i]."</td><td class= 'right'>$".$_SESSION['post-data']['orderprice'][$i]."</td></tr>";} ?><br>
 				You may track your order via the My Order page.</p>
-				<h2>Order Details</h2>
+				
 				<table border="0">
-					<tr>
-						<th class="left">Qty Item</th>
-						<th class="right">Total</th>
-					</tr>
           <?php
           for ($i = 0; $i < sizeOf($_SESSION['post-data']['orderitem']); $i++){
-           echo "<tr><td class = 'left'>".$_SESSION['post-data']['orderitem'][$i]." x ".$_SESSION['post-data']['orderqty'][$i]."</td><td class= 'right'>$".$_SESSION['post-data']['orderprice'][$i]."</td></tr>";
+           echo "<tr><td class = 'left'><strong>".$_SESSION['post-data']['orderqty'][$i]."</strong> ".$_SESSION['post-data']['orderitem'][$i]."</td><td class= 'right'>$".$_SESSION['post-data']['orderprice'][$i]."</td></tr>";
 
          }
           ?>
-					<tr>
+					<tr id="sub-total">
 						<th class="left">SubTotal</th>
-						<td class="right"><?php
-            echo $_SESSION['post-data']['order-subtotal']?></td>
+						<th class="right">$<?php
+            echo $_SESSION['post-data']['order-subtotal']?></th>
 					</tr>
 					<tr>
-						<th class="left">Tax</th>
+						<td class="left">Tax</td>
 						<td class="right">$1.80</td>
 					</tr>
 					<tr>
-						<th class="left">Delivery Charge</th>
+						<td class="left">Delivery Charge</td>
 						<td class="right">$1.00</td>
 					</tr>
 					<tr class="blank-row">
@@ -116,23 +117,22 @@ mysqli_close($conn);
             echo $_SESSION['post-data']['order-total']?></th>
 					</tr>
 					<tr>
-					 <th class="left">Payment Method</th>
-					 <th id="payment-method"><?php
-           echo $payment?></th>
+					 <td class="left">Payment Method</td>
+					 <td id="payment-method"><?php
+           echo $payment?></td>
 					</tr>
 					<tr>
-					 <th class="left">Estimated Delivery Time</th>
-					 <th id="delivery-time"><?php echo $time?></th>
+					 <td class="left">Estimated Delivery Time</td>
+					 <td id="delivery-time"><?php echo $time?></td>
 					</tr>
 
 				</table>
+				<div id="last-row">
+					<div id="print"><button >Print</button></div>
+					<div id="return"><a href="home.html">Return</a></div>
+				</div>
 	</div>
 	<div style="clear:both"></div>
-	<div id="last-row">
-		<div id="print"><button >Print</button></div>
-		<div id="return"><a href="home.html">Return</a></div>
-	</div>
-
 </div>
 </div>
 <div id="footer">
@@ -142,8 +142,7 @@ mysqli_close($conn);
 			<span><a href="#"><img src="images/instagram.png"></a></span>
 		</div>
 		<small><i>Copyright &copy 2017 Food Fighters</i></small>
-		</div>
-
+</div>
 </body>
 </html>
 

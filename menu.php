@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Foo Fighters</title>
+  <title>Food Fighters</title>
   <meta charset="utf-8">
   <script type="text/javascript" src="js/menu.js"></script>
   <link rel="stylesheet" href="css/menu.css">
@@ -192,29 +192,29 @@
 		<table border="0" id = "order-cart">
 			<tr>
 				<th class="left">Item</th>
-				<th class="right">Price</th>
+				<th class="right">Price($)</th>
 			</tr>
 			<tr class="blank-row">
 			</tr>
 			<tr id="sub-total">
 				<th class="left">SubTotal</th>
-				<td class="right" id = "subtotal"><input type = "text" size = "2" value = "0.00" name = "order-subtotal" id = "order-subtotal" readonly></td>
+				<th class="right" id = "subtotal">
+					<input type = "text" size = "2" value = "0.00" name = "order-subtotal" id = "order-subtotal" readonly>
+				</th>
 			</tr>
 			<tr>
-				<th class="left">Tax</th>
+				<td class="left">Tax</td>
 				<td class="right">1.80</td>
 			</tr>
 			<tr>
-				<th class="left">Delivery Charge</th>
+				<td class="left">Delivery Charge</td>
 				<td class="right">1.00</td>
 			</tr>
 			<tr class="blank-row">
-				<td></td>
-				<td></td>
 			</tr>
 			<tr id="net-total">
 				<th class="left">Net Total</td>
-				<td class="right"><input type = "text" size = "2" value = "0.00" name = "order-total" id = "order-total" readonly></th>
+				<th class="right"><input type = "text" size = "2" value = "2.80" name = "order-total" id = "order-total" readonly></th>
 			</tr>
 		</table>
 
