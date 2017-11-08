@@ -21,6 +21,15 @@
 	border-radius:5px;
 	margin-bottom:20px;
 }
+#order-summary tr{
+	width:100%;
+}
+#order-summary .personal-detail .detail{
+	width:80%;
+}
+#last-personal-detail-row{
+	border-bottom:1px solid #d7d7d7;
+}
 #order-summary h2,#delivery-status h2{
 	background-color:black;
 	color:white;
@@ -57,6 +66,9 @@
 .blank-row{
 	height:20px;
 }
+#net-total .left{
+	padding-right:0px;
+}
 #sub-total{
 	border-top:1px solid #d7d7d7;
 }
@@ -72,4 +84,10 @@
 	color:#99cc00;
 	padding-top:5px;
 	padding-bottom:15px;
+}
+.blinking {
+  animation: blinker 2s linear infinite;
+}
+@keyframes blinker {  
+  50% { opacity: 0; }
 }

@@ -4,7 +4,7 @@
 <head>
   <title>Food Fighters</title>
   <meta charset="utf-8">
-  <script type="text/javascript" src="js/myOrder.js"></script>
+  <script type="text/javascript" src="js/showOrder.js"></script>
   <link rel="stylesheet" href="css/showOrder.css">
   <link rel="stylesheet" href="css/parent.css">
 </head>
@@ -26,11 +26,10 @@
   		<div class="col" id="order-summary">
   			<h2>Order Summary</h2>
   			<table border="0">
-            <tr>
-              <td class = "left" colspan = "2">Name</td>
-            </tr>
-            <tr>
-              <td class "left" colspan ="2"><?php
+            <tr class="personal-detail left">
+              <td>Name</td>
+			  <td class="detail">
+				<?php
               error_reporting(E_ALL);
               ini_set('display_errors', 'On');
                           $email = $_POST['email'];
@@ -96,16 +95,15 @@
 														}
 													} else {
 														echo "0 results";
-													} ?></td>
-			</tr>
-  	
-            <tr class="blank-row">
-  					</tr>
-            <tr>
-              <td class = "left" colspan = "2">Contact Number</td>
+													} ?>
+			  
+			  
+			  </td>
             </tr>
-            <tr>
-              <td class "left" colspan ="2"><?php
+            <tr class="personal-detail left">
+			  <td>Contact</td>
+              <td class="detail">
+				<?php
               error_reporting(E_ALL);
               ini_set('display_errors', 'On');
                           $email = $_POST['email'];
@@ -138,15 +136,15 @@
                             }
                           } else {
                             echo "0 results";
-                          } ?></td>
-            </tr>
-            <tr class="blank-row">
-  			</tr>
-            <tr>
-              <td class = "left" colspan = "2">Email</td>
-            </tr>
-            <tr>
-              <td class "left" colspan="2"><?php
+                          } ?>
+			  
+			  
+			  </td>
+			</tr>
+            <tr class="personal-detail left">
+              <td>Email</td>
+			  <td class="detail">
+				<?php
               error_reporting(E_ALL);
               ini_set('display_errors', 'On');
                           $email = $_POST['email'];
@@ -168,18 +166,14 @@
 													If there are more than zero rows returned, the function fetch_assoc() puts all the results into an associative array that we can loop through. The while() loop loops through the result set and outputs the data from the id, firstname and lastname columns.
 													*/
                           echo $email;
-													 ?></td>
-
-  					</tr>
-
-
-            <tr class="blank-row">
-  					</tr>
-			<tr>
-				<td class="left" colspan="2">Address</td>
-			</tr>
-			<tr class="item-detail-row">
-				<td class="left" colspan="2"><?php
+													 ?>
+			  
+			  </td>
+            </tr>
+            <tr class="personal-detail left">
+              <td>Address</td>
+			  <td class="detail">
+				<?php
               error_reporting(E_ALL);
               ini_set('display_errors', 'On');
                           $email = $_POST['email'];
@@ -212,15 +206,15 @@
 														}
 													} else {
 														echo "0 results";
-													} ?></td>
+													} ?>
+			  </td>
 			</tr>
 			<tr class="blank-row">
 			</tr>
-            <tr id = "first-row">
-              <td class = "left" colspan = "2">Order Date</td>
-            </tr>
-            <tr class = "item-detail-row">
-              <td class "left"><?php
+            <tr class="personal-detail left">
+              <td>Order Date</td>
+			  <td class="detail">
+				<?php
               error_reporting(E_ALL);
               ini_set('display_errors', 'On');
                           $email = $_POST['email'];
@@ -253,15 +247,13 @@
                             }
                           } else {
                             echo "0 results";
-                          } ?></td>
+                          } ?>
+			  </td>
             </tr>
-            <tr class="blank-row">
-  					</tr>
-            <tr>
-              <td class = "left" colspan = "2">Order Time</td>
-            </tr>
-            <tr>
-              <td class "left"><?php
+			<tr class="personal-detail left">
+              <td>Order Time</td>
+			  <td class="detail">
+				<?php
               error_reporting(E_ALL);
               ini_set('display_errors', 'On');
                           $email = $_POST['email'];
@@ -294,10 +286,9 @@
                             }
                           } else {
                             echo "0 results";
-                          } ?></td>
+                          } ?>
+			  </td>
             </tr>
-            <tr class="blank-row">
-  					</tr>
 
               <?php
                           $email = $_POST['email'];
@@ -382,8 +373,8 @@
                          ?>
   					<tr class="blank-row">
   					</tr>
-  					<tr>
-  						<th class="left">Subtotal</td>
+  					<tr id="sub-total">
+  						<th class="left">Subtotal</th>
   						<th class="right">$<?php
                           $email = $_POST['email'];
 													$servername = "localhost";
@@ -419,7 +410,7 @@
   					<tr class="blank-row">
   					</tr>
   					<tr id="net-total">
-  						<th class="left">Net Total</td>
+  						<th class="left">Net Total</th>
   						<th class="right">$<?php
                           $email = $_POST['email'];
 													$servername = "localhost";
@@ -448,7 +439,7 @@
   		</div>
   		<div class="col" id="delivery-status">
   			<h2>Delivery Status</h2>
-  			<p>Preparing</p>
+  			<p class="blinking">Preparing</p>
   		</div>
   		<div style="clear:both"></div>
   	</div>
@@ -461,6 +452,6 @@
 			<span><a href="#"><img src="images/instagram.png"></a></span>
 		</div>
 		<small><i>Copyright &copy 2017 Food Fighters</i></small>
-</div>
+	</div>
 </body>
 </html>
