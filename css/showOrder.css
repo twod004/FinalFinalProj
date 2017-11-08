@@ -1,0 +1,78 @@
+#content {
+  margin: 10px auto;
+}
+
+#my-order-info{
+  width:70%;
+  margin:0 auto;
+}
+#delivery-status{
+	width:30%;
+}
+.col{
+	float:left;
+}
+#order-summary{
+	width:60%;
+	text-align:center;
+	border: 1px solid #D7D7D7;
+	background-color:white;
+	margin:auto;
+	border-radius:5px;
+	margin-bottom:20px;
+}
+#order-summary h2,#delivery-status h2{
+	background-color:black;
+	color:white;
+	margin:0;
+	padding:10px;
+	margin-bottom:10px;
+}
+
+#order-summary table{
+	width:97%;
+	background-color:white;
+	color:black;
+	margin:0 10px;
+	border-collapse:collapse;
+	border-bottom:1px solid #d7d7d7;
+}
+#order-summary table .right{
+	text-align:right;
+	width:10%;
+}
+#order-summary table .left{
+	text-align:left;
+}
+#order-summary table .center{
+	text-align:center;
+}
+#order-summary table th{
+	padding:10px;
+	font-size:24px;
+	font-weight:normal;
+}
+#order-summary table td{
+	font-size:16px;
+	padding:10px 15px;
+	height:20px;
+}
+.blank-row{
+	height:20px;
+}
+#sub-total{
+	border-top:1px solid #d7d7d7;
+}
+#delivery-status{
+	margin-left:38px;
+	border:1px solid #d7d7d7;
+	text-align:center;
+	background-color:white;
+}
+#delivery-status p{
+	margin:0px;
+	font-size:20px;
+	color:#99cc00;
+	padding-top:5px;
+	padding-bottom:15px;
+}

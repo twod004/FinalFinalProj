@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +5,7 @@
   <title>Food Fighters</title>
   <meta charset="utf-8">
   <script type="text/javascript" src="js/myOrder.js"></script>
-  <link rel="stylesheet" href="css/myOrder.css">
+  <link rel="stylesheet" href="css/showOrder.css">
   <link rel="stylesheet" href="css/parent.css">
 </head>
 
@@ -18,9 +15,11 @@
     <a href="home.html"><img src="images/logo2.png"></a>
   </div>
   <div id="nav">
-    <a href="menu.php">Menu</a>
-    <a href="myOrder.php">My Order</a>
-    <a href="contactUs.html">Contact Us</a>
+	<div class="nav-bar">
+		<a href="menu.php">Menu</a>
+		<a href="myOrder.php">My Order</a>
+		<a href="contactUs.html">Contact Us</a>
+	</div>
   </div>
   <div id="content">
     <div id="my-order-info">
@@ -28,10 +27,10 @@
   			<h2>Order Summary</h2>
   			<table border="0">
   					<tr id="first-row">
-  						<th class="left" colspan="2">Address</th>
+  						<th class="center" colspan="2">Address</th>
   					</tr>
   					<tr class="item-detail-row">
-  						<td class="left"><?php
+  						<td class="center" colspan="2"><?php
               error_reporting(E_ALL);
               ini_set('display_errors', 'On');
                           $email = $_POST['email'];
@@ -68,12 +67,7 @@
   					</tr>
   					<tr class="blank-row">
   					</tr>
-  					<tr>
-  						<th class="left"><p>Qty item</p></th>
-  						<th class="right"><p>TOTAL</p></th>
-  					</tr>
 
-  					<tr class="item-detail-row">
               <?php
                           $email = $_POST['email'];
 													$servername = "localhost";
@@ -145,8 +139,7 @@
 
                             $totalprice = $menuprice * $menuqty;
 
-                            echo " <tr><td class = 'left'>".$menuname." x ".$menuqty."</td><td class = 'right'>$".round($totalprice,2)."</td></tr>";
-
+                            echo " <tr><td class = 'left'><strong>".$menuqty."</strong> ".$menuname."</td><td class = 'right'>$".round($totalprice,2)."</td></tr>";
 
                           }
 													/*First, we set up an SQL query that selects the id, firstname and lastname columns from the MyGuests table. The next line of code runs the query and puts the resulting data into a variable called $result.
@@ -156,12 +149,11 @@
 													If there are more than zero rows returned, the function fetch_assoc() puts all the results into an associative array that we can loop through. The while() loop loops through the result set and outputs the data from the id, firstname and lastname columns.
 													*/
                          ?>
-  					</tr>
   					<tr class="blank-row">
   					</tr>
   					<tr>
   						<th class="left">Subtotal</td>
-  						<td class="right">$<?php
+  						<th class="right">$<?php
                           $email = $_POST['email'];
 													$servername = "localhost";
 													$username = "f35im";
@@ -183,23 +175,21 @@
 														}
 													} else {
 														echo "0 results";
-													} ?></td>
+													} ?></th>
   					</tr>
   					<tr>
-  						<th class="left">Tax</td>
+  						<td class="left">Tax</td>
   						<td class="right">$1.80</td>
   					</tr>
   					<tr>
-  						<th class="left">Delivery Charge</td>
+  						<td class="left">Delivery Charge</td>
   						<td class="right">$1.00</td>
   					</tr>
   					<tr class="blank-row">
-  						<td></td>
-  						<td></td>
   					</tr>
   					<tr id="net-total">
   						<th class="left">Net Total</td>
-  						<td class="right">$<?php
+  						<th class="right">$<?php
                           $email = $_POST['email'];
 													$servername = "localhost";
 													$username = "f35im";
@@ -221,8 +211,13 @@
 														}
 													} else {
 														echo "0 results";
-													} ?></td>
+													} ?></th>
   					</tr>
+					<tr>
+						<td class="left">Delivery Time</td>
+						<td class="right"><?php date_default_timezone_set("Asia/Singapore");
+						echo date("h:ia", strtotime("+30 minutes"))?></td>
+					</tr>
   				</table>
   		</div>
   		<div class="col" id="delivery-status">
@@ -233,3 +228,13 @@
   	</div>
     </div>
   </div>
+  <div id="footer">
+		<div class="social">
+			<span><a href="#"><img src="images/facebook.png"></a></span>
+			<span><a href="#"><img src="images/twitter.png"></a></span>
+			<span><a href="#"><img src="images/instagram.png"></a></span>
+		</div>
+		<small><i>Copyright &copy 2017 Food Fighters</i></small>
+</div>
+</body>
+</html>

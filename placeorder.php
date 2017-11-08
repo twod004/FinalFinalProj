@@ -24,7 +24,7 @@ if(empty($time)){
 	$time = date("h:ia", strtotime("+30 minutes"));
 }
 
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+/*$conn = mysqli_connect($servername, $username, $password, $dbname);
 //check connection.
 if (!$conn) {
 
@@ -48,7 +48,7 @@ for ($i = 0; $i < sizeOf($_SESSION['post-data']['orderitem']); $i++) {
   }
   }
 
-mysqli_close($conn);
+mysqli_close($conn);*/
   ?>
 
 
@@ -118,8 +118,7 @@ mysqli_close($conn);
 					</tr>
 					<tr>
 					 <td class="left">Payment Method</td>
-					 <td id="payment-method"><?php
-           echo $payment?></td>
+					 <td id="payment-method"><?php echo $payment?></td>
 					</tr>
 					<tr>
 					 <td class="left">Estimated Delivery Time</td>

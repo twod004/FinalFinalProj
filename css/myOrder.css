@@ -12,7 +12,8 @@
 	font-family:helvetica;
 	font-size:22px;
 	margin:10px;
-	padding:0 5px;
+	padding:10px;
+	width:30%;
 }
 #my-order-email-form input{
 	vertical-align:middle;
@@ -20,79 +21,10 @@
 #my-order-email-form #submit{
 	width:30px;
 	height:26px;
+	transition: transform 0.4s,opacity 0.4s;;
+	opacity:0.6;
 }
-#my-order-info{
-  width:70%;
-  margin:0 auto;
-}
-#my-order-info #order-summary{
-	width:60%;
-}
-#my-order-info #delivery-status{
-	width:30%;
-}
-#order-summary{
-	text-align:left;
-	border:1px solid black;
-	padding-left:5px;
-	padding-right:5px;
-}
-#order-summary h2{
-	margin:5px 0;
-}
-#order-summary table{
-	width:100%;
-	border-collapse:collapse;
-}
-#order-summary #first-row{
-	border-top:1px solid black;
-}
-#order-summary #first-row th{
-	padding-top:5px;
-}
-#order-summary table th{
-	font-weight:normal;
-	font-size:17px;
-}
-#order-summary table td{
-	font-size:15px;
-	padding:10px;
-}
-#order-summary table .item-detail-row td{
-	padding:5px 10px;
-}
-#order-summary table th p{
-	margin:0px;
-}
-#order-summary .blank-row{
-	height:20px;
-}
-#order-summary #net-total{
-	border-top:1px solid black;
-}
-#order-summary .left{
-	width:70%;
-}
-#order-summary .right{
-	width:10%;
-	text-align:right;
-}
-#my-order-info .col{
-	float:left;
-}
-#delivery-status{
-	margin-left:38px;
-	border:1px solid black;
-	text-align:center;
-	padding-left:5px;
-	padding-right:5px;
-}
-#delivery-status h2{
-	margin:5px 0;
-}
-#delivery-status p{
-	border-top:1px solid black;
-	margin:0px;
-	padding-top:5px;
-	padding-bottom:5px;
+#my-order-email-form #submit:hover{
+	transform: scale(1.5,1.5);
+	opacity:1;
 }

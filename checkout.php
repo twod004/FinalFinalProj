@@ -85,7 +85,7 @@ print_r($_SESSION);
 					</div>
 				  <div class = "inline-input">
 					<label>
-					  <input type = "hidden" name = "payment" id = "payment" value = "0">
+					  <input type = "hidden" name = "payment" id = "payment" value = "VISA">
 					</label>
 				  </div>
 				</div>
