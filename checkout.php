@@ -59,7 +59,8 @@ print_r($_SESSION);
 					</div>
 					<div class="inline-input">
 						<label for="customer-email">Email</label><br>
-						<input type="email" name="customer-email" id="customer-email" pattern="\w+([\.-]?\w+)*@(\w+\.){1,3}(\w{2,3})" title="Invalid email address"required>
+						<!-- <input type="email" name="customer-email" id="customer-email" pattern="\w+([\.-]?\w+)*@(\w+\.){1,3}(\w{2,3})" title="Invalid email address"required> -->
+            <input type="email" name="customer-email" id="customer-email" title="Invalid email address"required>
 					</div>
 					<div style="clear:both"></div>
 				</div>
@@ -102,7 +103,7 @@ print_r($_SESSION);
 					</div>
 				</div>
 			</div>
-			
+
 			<div id="order-details">
 				<h2>Order Details</h2>
 				<table border="0">
