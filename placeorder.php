@@ -24,13 +24,13 @@ if(empty($time)){
 	$time = date("h:ia", strtotime("+30 minutes"));
 }
 
-/*$conn = mysqli_connect($servername, $username, $password, $dbname);
+$conn = mysqli_connect($servername, $username, $password, $dbname);
 //check connection.
 if (!$conn) {
 
   die ("Connection failed:".mysqli_connect_error());
 }
-$sql = "INSERT INTO customers (firstname, lastname, address,cemail, orderdate, ordertime, subtotal, total) values ('".$fname."','".$lname."','".$address."','".$email."','".$date."','".$time."','".$subtotal."','".$total."');";
+$sql = "INSERT INTO customers (firstname, lastname, address,cemail, orderdate, ordertime, subtotal, total, contact) values ('".$fname."','".$lname."','".$address."','".$email."','".$date."','".$time."','".$subtotal."','".$total."','".$contact."');";
 if (mysqli_query($conn, $sql)) {
   echo "Record updated successfully";
 } else {
@@ -48,7 +48,7 @@ for ($i = 0; $i < sizeOf($_SESSION['post-data']['orderitem']); $i++) {
   }
   }
 
-mysqli_close($conn);*/
+mysqli_close($conn);
   ?>
 
 
@@ -76,7 +76,7 @@ mysqli_close($conn);*/
 	</div>
   </div>
   <div id="content">
-	
+
 	<div class="col" id="order-details">
 		<h2>Billing Details</h2>
 		<p>Thank you for ordering with us.<br> A confirmation email has been sent to the following email address:
@@ -84,11 +84,10 @@ mysqli_close($conn);*/
           $subject = 'FOOD FIGHTERS ORDER';
           $message = 'YOUR DELIVERY IS ON ITS WAY! Just click on the following link to check your orders: http://192.168.56.2/f35im/FinalFinalProj/myOrder.php';
           Mail($email, $subject, $message);
-
-          for ($i = 0; $i < sizeOf($_SESSION['post-data']['orderitem']); $i++){
-         echo "<tr><td class = 'left'>".$_SESSION['post-data']['orderitem'][$i]." x ".$_SESSION['post-data']['orderqty'][$i]."</td><td class= 'right'>$".$_SESSION['post-data']['orderprice'][$i]."</td></tr>";} ?><br>
+					echo $email;
+					?><br>
 				You may track your order via the My Order page.</p>
-				
+
 				<table border="0">
           <?php
           for ($i = 0; $i < sizeOf($_SESSION['post-data']['orderitem']); $i++){
@@ -127,7 +126,7 @@ mysqli_close($conn);*/
 
 				</table>
 				<div id="last-row">
-					<div id="print"><button >Print</button></div>
+					<div id="print"><button onclick = "window.print()" >Print</button></div>
 					<div id="return"><a href="home.html">Return</a></div>
 				</div>
 	</div>

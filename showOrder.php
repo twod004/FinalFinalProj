@@ -26,11 +26,160 @@
   		<div class="col" id="order-summary">
   			<h2>Order Summary</h2>
   			<table border="0">
-  					<tr id="first-row">
-  						<th class="center" colspan="2">Address</th>
+            <tr>
+              <td class = "left" colspan = "2">Name</td>
+            </tr>
+            <tr>
+              <td class "left" colspan ="2"><?php
+              error_reporting(E_ALL);
+              ini_set('display_errors', 'On');
+                          $email = $_POST['email'];
+													$servername = "localhost";
+													$username = "f35im";
+													$password = "f35im";
+													$dbname = "f35im";
+
+													// Create connection
+													$conn = mysqli_connect($servername, $username, $password, $dbname);
+													// Check connection
+													if (!$conn) {
+														die("Connection failed: " . mysqli_connect_error());
+													}
+													/*First, we set up an SQL query that selects the id, firstname and lastname columns from the MyGuests table. The next line of code runs the query and puts the resulting data into a variable called $result.
+
+													Then, the function num_rows() checks if there are more than zero rows returned.
+
+													If there are more than zero rows returned, the function fetch_assoc() puts all the results into an associative array that we can loop through. The while() loop loops through the result set and outputs the data from the id, firstname and lastname columns.
+													*/
+
+													$sql = "SELECT firstname FROM customers WHERE cemail='".$email."';";
+													$result = mysqli_query($conn, $sql);
+
+
+													if (mysqli_num_rows($result) > 0) {
+														// output data of each row
+														while($row = mysqli_fetch_assoc($result)) {
+															echo $row["firstname"];
+														}
+													} else {
+														echo "0 results";
+													} ?> <?php
+              error_reporting(E_ALL);
+              ini_set('display_errors', 'On');
+                          $email = $_POST['email'];
+													$servername = "localhost";
+													$username = "f35im";
+													$password = "f35im";
+													$dbname = "f35im";
+
+													// Create connection
+													$conn = mysqli_connect($servername, $username, $password, $dbname);
+													// Check connection
+													if (!$conn) {
+														die("Connection failed: " . mysqli_connect_error());
+													}
+													/*First, we set up an SQL query that selects the id, firstname and lastname columns from the MyGuests table. The next line of code runs the query and puts the resulting data into a variable called $result.
+
+													Then, the function num_rows() checks if there are more than zero rows returned.
+
+													If there are more than zero rows returned, the function fetch_assoc() puts all the results into an associative array that we can loop through. The while() loop loops through the result set and outputs the data from the id, firstname and lastname columns.
+													*/
+
+													$sql = "SELECT lastname FROM customers WHERE cemail='".$email."';";
+													$result = mysqli_query($conn, $sql);
+
+
+													if (mysqli_num_rows($result) > 0) {
+														// output data of each row
+														while($row = mysqli_fetch_assoc($result)) {
+															echo $row["lastname"];
+														}
+													} else {
+														echo "0 results";
+													} ?></td>
+			</tr>
+  	
+            <tr class="blank-row">
   					</tr>
-  					<tr class="item-detail-row">
-  						<td class="center" colspan="2"><?php
+            <tr>
+              <td class = "left" colspan = "2">Contact Number</td>
+            </tr>
+            <tr>
+              <td class "left" colspan ="2"><?php
+              error_reporting(E_ALL);
+              ini_set('display_errors', 'On');
+                          $email = $_POST['email'];
+                          $servername = "localhost";
+                          $username = "f35im";
+                          $password = "f35im";
+                          $dbname = "f35im";
+
+                          // Create connection
+                          $conn = mysqli_connect($servername, $username, $password, $dbname);
+                          // Check connection
+                          if (!$conn) {
+                            die("Connection failed: " . mysqli_connect_error());
+                          }
+                          /*First, we set up an SQL query that selects the id, firstname and lastname columns from the MyGuests table. The next line of code runs the query and puts the resulting data into a variable called $result.
+
+                          Then, the function num_rows() checks if there are more than zero rows returned.
+
+                          If there are more than zero rows returned, the function fetch_assoc() puts all the results into an associative array that we can loop through. The while() loop loops through the result set and outputs the data from the id, firstname and lastname columns.
+                          */
+
+                          $sql = "SELECT contact FROM customers WHERE cemail='".$email."';";
+                          $result = mysqli_query($conn, $sql);
+
+
+                          if (mysqli_num_rows($result) > 0) {
+                            // output data of each row
+                            while($row = mysqli_fetch_assoc($result)) {
+                              echo $row["contact"];
+                            }
+                          } else {
+                            echo "0 results";
+                          } ?></td>
+            </tr>
+            <tr class="blank-row">
+  			</tr>
+            <tr>
+              <td class = "left" colspan = "2">Email</td>
+            </tr>
+            <tr>
+              <td class "left" colspan="2"><?php
+              error_reporting(E_ALL);
+              ini_set('display_errors', 'On');
+                          $email = $_POST['email'];
+													$servername = "localhost";
+													$username = "f35im";
+													$password = "f35im";
+													$dbname = "f35im";
+
+													// Create connection
+													$conn = mysqli_connect($servername, $username, $password, $dbname);
+													// Check connection
+													if (!$conn) {
+														die("Connection failed: " . mysqli_connect_error());
+													}
+													/*First, we set up an SQL query that selects the id, firstname and lastname columns from the MyGuests table. The next line of code runs the query and puts the resulting data into a variable called $result.
+
+													Then, the function num_rows() checks if there are more than zero rows returned.
+
+													If there are more than zero rows returned, the function fetch_assoc() puts all the results into an associative array that we can loop through. The while() loop loops through the result set and outputs the data from the id, firstname and lastname columns.
+													*/
+                          echo $email;
+													 ?></td>
+
+  					</tr>
+
+
+            <tr class="blank-row">
+  					</tr>
+			<tr>
+				<td class="left" colspan="2">Address</td>
+			</tr>
+			<tr class="item-detail-row">
+				<td class="left" colspan="2"><?php
               error_reporting(E_ALL);
               ini_set('display_errors', 'On');
                           $email = $_POST['email'];
@@ -64,8 +213,90 @@
 													} else {
 														echo "0 results";
 													} ?></td>
+			</tr>
+			<tr class="blank-row">
+			</tr>
+            <tr id = "first-row">
+              <td class = "left" colspan = "2">Order Date</td>
+            </tr>
+            <tr class = "item-detail-row">
+              <td class "left"><?php
+              error_reporting(E_ALL);
+              ini_set('display_errors', 'On');
+                          $email = $_POST['email'];
+                          $servername = "localhost";
+                          $username = "f35im";
+                          $password = "f35im";
+                          $dbname = "f35im";
+
+                          // Create connection
+                          $conn = mysqli_connect($servername, $username, $password, $dbname);
+                          // Check connection
+                          if (!$conn) {
+                            die("Connection failed: " . mysqli_connect_error());
+                          }
+                          /*First, we set up an SQL query that selects the id, firstname and lastname columns from the MyGuests table. The next line of code runs the query and puts the resulting data into a variable called $result.
+
+                          Then, the function num_rows() checks if there are more than zero rows returned.
+
+                          If there are more than zero rows returned, the function fetch_assoc() puts all the results into an associative array that we can loop through. The while() loop loops through the result set and outputs the data from the id, firstname and lastname columns.
+                          */
+
+                          $sql = "SELECT orderdate FROM customers WHERE cemail='".$email."';";
+                          $result = mysqli_query($conn, $sql);
+
+
+                          if (mysqli_num_rows($result) > 0) {
+                            // output data of each row
+                            while($row = mysqli_fetch_assoc($result)) {
+                              echo $row["orderdate"];
+                            }
+                          } else {
+                            echo "0 results";
+                          } ?></td>
+            </tr>
+            <tr class="blank-row">
   					</tr>
-  					<tr class="blank-row">
+            <tr>
+              <td class = "left" colspan = "2">Order Time</td>
+            </tr>
+            <tr>
+              <td class "left"><?php
+              error_reporting(E_ALL);
+              ini_set('display_errors', 'On');
+                          $email = $_POST['email'];
+                          $servername = "localhost";
+                          $username = "f35im";
+                          $password = "f35im";
+                          $dbname = "f35im";
+
+                          // Create connection
+                          $conn = mysqli_connect($servername, $username, $password, $dbname);
+                          // Check connection
+                          if (!$conn) {
+                            die("Connection failed: " . mysqli_connect_error());
+                          }
+                          /*First, we set up an SQL query that selects the id, firstname and lastname columns from the MyGuests table. The next line of code runs the query and puts the resulting data into a variable called $result.
+
+                          Then, the function num_rows() checks if there are more than zero rows returned.
+
+                          If there are more than zero rows returned, the function fetch_assoc() puts all the results into an associative array that we can loop through. The while() loop loops through the result set and outputs the data from the id, firstname and lastname columns.
+                          */
+
+                          $sql = "SELECT ordertime FROM customers WHERE cemail='".$email."';";
+                          $result = mysqli_query($conn, $sql);
+
+
+                          if (mysqli_num_rows($result) > 0) {
+                            // output data of each row
+                            while($row = mysqli_fetch_assoc($result)) {
+                              echo $row["ordertime"];
+                            }
+                          } else {
+                            echo "0 results";
+                          } ?></td>
+            </tr>
+            <tr class="blank-row">
   					</tr>
 
               <?php
@@ -213,11 +444,6 @@
 														echo "0 results";
 													} ?></th>
   					</tr>
-					<tr>
-						<td class="left">Delivery Time</td>
-						<td class="right"><?php date_default_timezone_set("Asia/Singapore");
-						echo date("h:ia", strtotime("+30 minutes"))?></td>
-					</tr>
   				</table>
   		</div>
   		<div class="col" id="delivery-status">
