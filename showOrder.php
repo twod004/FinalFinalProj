@@ -250,7 +250,7 @@
                           } ?>
 			  </td>
             </tr>
-			<tr class="personal-detail left">
+			<tr class="personal-detail left last-detail-row">
               <td>Order Time</td>
 			  <td class="detail">
 				<?php
