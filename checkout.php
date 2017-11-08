@@ -61,7 +61,7 @@ print_r($_SESSION);
 					<div class="inline-input">
 						<label for="customer-email">Email</label><br>
 						<!-- <input type="email" name="customer-email" id="customer-email" pattern="\w+([\.-]?\w+)*@(\w+\.){1,3}(\w{2,3})" title="Invalid email address"required> -->
-            <input type="email" name="customer-email" id="customer-email" title="Invalid email address"required>
+						<input type="email" name="customer-email" id="customer-email" title="Invalid email address"required>
 					</div>
 					<div style="clear:both"></div>
 				</div>
@@ -112,11 +112,11 @@ print_r($_SESSION);
 						<th class="left">Item</th>
 						<th class="right">Price($)</th>
 					</tr>
-            <?php
-				for ($i = 0; $i < sizeOf($_SESSION['post-data']['orderitem']); $i++){
-				 echo "<tr><td class='left'><strong>".$_SESSION['post-data']['orderqty'][$i]."</strong>  ".$_SESSION['post-data']['orderitem'][$i]."</td><td class='right'>".$_SESSION['post-data']['orderprice'][$i]."</td></tr>";
-				}
-            ?>
+						<?php
+							for ($i = 0; $i < sizeOf($_SESSION['post-data']['orderitem']); $i++){
+							 echo "<tr><td class='left'><strong>".$_SESSION['post-data']['orderqty'][$i]."</strong>  ".$_SESSION['post-data']['orderitem'][$i]."</td><td class='right'>".$_SESSION['post-data']['orderprice'][$i]."</td></tr>";
+							}
+						?>
 					<tr class="blank-row">
 					</tr>
 					<tr id="sub-total">
@@ -146,7 +146,7 @@ print_r($_SESSION);
 				</table>
 				<div id="place-order">
 				  <button type = "submit" class="submit-btn" form = "form2">
-					Checkout
+					Place order
 				  </button>
 				</div>
 			</div>

@@ -45,10 +45,12 @@ function additem(itemqty, itemname, itemprice){
   var w = parseFloat(z);
   var e = (q*w).toFixed(2);
   
+  //calculate the subtotal and total
   var r = parseFloat(document.getElementById("order-subtotal").value);
   var sub = (parseFloat(e) + parseFloat(r)).toFixed(2);
   var total = (parseFloat(sub) + 1.80 + 1).toFixed(2);
   
+  //check if item exists in cart
   var itemExists = document.getElementById(x+"-order");
   if(itemExists != null){
 	  var tempqty = document.getElementById(x+"-order-qty").innerHTML;
@@ -66,6 +68,7 @@ function additem(itemqty, itemname, itemprice){
 		  }
 	  }
   }else{
+  //if doesn't exist, add new row and hidden input elements
   var rows = document.getElementById("order-cart").rows.length;
   var table = document.getElementById("order-cart");
   var row  = table.insertRow(rows-6);
@@ -92,6 +95,7 @@ function additem(itemqty, itemname, itemprice){
   cell4.style.display = "none";
   cell5.style.display = "none";
   }
+//update sub total and total
   document.getElementById("order-subtotal").value = sub;
   document.getElementById("order-total").value = total;
   document.getElementById(itemqty).value = 0;
