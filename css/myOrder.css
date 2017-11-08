@@ -21,8 +21,9 @@
 #my-order-email-form #submit{
 	width:30px;
 	height:26px;
-	transition: transform 0.4s,opacity 0.4s;;
+	transition: transform 0.4s,opacity 0.4s;
 	opacity:0.6;
+	outline:none;
 }
 #my-order-email-form #submit:hover{
 	transform: scale(1.5,1.5);

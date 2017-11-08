@@ -58,6 +58,7 @@ mysqli_close($conn);
 <head>
   <title>Food Fighters</title>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script type="text/javascript" src="js/placeorder.js"></script>
   <link rel="stylesheet" href="css/placeorder.css">
   <link rel="stylesheet" href="css/parent.css">
@@ -69,10 +70,10 @@ mysqli_close($conn);
     <a href="home.html"><img src="images/logo2.png"></a>
   </div>
   <div id="nav">
-	<div class="nav-bar">
-		<a href="menu.php">Menu</a>
-		<a href="myOrder.php">My Order</a>
-		<a href="contactUs.html">Contact Us</a>
+	<div class="nav-bar row">
+		<a href="menu.php" class="col-4">Menu</a>
+		<a href="myOrder.php" class="col-4">My Order</a>
+		<a href="contactUs.html" class="col-4">Contact Us</a>
 	</div>
   </div>
   <div id="content">
